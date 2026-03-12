@@ -1,0 +1,215 @@
+/* ============================= */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ============================= */
+/* Body & Themes */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    transition: background 0.5s, color 0.5s;
+    position: relative;
+    overflow-x: hidden;
+    color: #000;
+}
+
+body.dark {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #f0f0f0;
+}
+
+/* ============================= */
+/* Theme Icon Button */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle .icon {
+    font-size: 1.8rem;
+    transition: transform 0.7s ease, opacity 0.7s ease;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+}
+
+.theme-toggle .sun {
+    color: #FFD93D;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.theme-toggle .moon {
+    color: #F0F0F0;
+    transform: translateY(40px);
+    opacity: 0;
+}
+
+/* When dark mode active */
+body.dark .sun {
+    transform: translateY(40px);
+    opacity: 0;
+}
+
+body.dark .moon {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ============================= */
+/* Header */
+header {
+    text-align: center;
+    padding: 1.5rem;
+    color: inherit;
+    z-index: 10;
+}
+
+/* ============================= */
+/* Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 2rem;
+    z-index: 5;
+}
+
+/* ============================= */
+/* Card (Glassmorphism) */
+.card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background 0.5s;
+}
+
+body.dark .card {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* ============================= */
+/* Inputs */
+input[type="number"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    color: inherit;
+    transition: background 0.3s;
+}
+
+body.dark input[type="number"] {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================= */
+/* Button */
+button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #ff758c;
+    color: white;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #ff4e62;
+}
+
+/* ============================= */
+/* Result */
+.result {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* ============================= */
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    transition: background 0.5s;
+}
+
+body.dark footer {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* ============================= */
+/* Code Element Styling */
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #ff758c;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark code {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ff9cb8;
+}
+
+/* ============================= */
+/* Responsive */
+@media (max-width: 600px) {
+    .card {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+}
+
+/* ============================= */
+/* Canvas for animated flowers */
+#flowerCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
